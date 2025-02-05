@@ -56,6 +56,25 @@ class JetstreamServiceProvider extends ServiceProvider
             'read',
             'create',
             'update',
-        ])->description('Editor users have the ability to read, create, and update.');
+        ])->description('Editor CRU access.');
+
+        Jetstream::role('developer', 'Developer', [
+            'create',
+            'read',
+            'update',
+            'delete',
+        ])->description('Developer CRUD access.');
+
+        Jetstream::role('designer', 'Designer', [
+            'create',
+            'read',
+        ])->description('Designer create & read access.');
+
+        Jetstream::role('manager', 'Manager', [
+            'create',
+            'read',
+            'update',
+            'delete',
+        ])->description('Manager CRUD access.');;
     }
 }

@@ -12,7 +12,7 @@ use Tests\TestCase;
 
 class DeleteApiTokenTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_api_tokens_can_be_deleted(): void
     {
@@ -20,7 +20,7 @@ class DeleteApiTokenTest extends TestCase
             $this->markTestSkipped('API support is not enabled.');
         }
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         $token = $user->tokens()->create([
             'name' => 'Test Token',

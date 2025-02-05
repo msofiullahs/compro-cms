@@ -11,18 +11,43 @@ class Media extends Model
 {
     use SoftDeletes;
 
-    protected function getFileUrlAttribute()
+    protected $appends = [
+        'file_url',
+        'file_size',
+        'author_name',
+    ];
+
+    public function user()
     {
-        return Storage::url('photos/'.$this->filename);
+        return $this->hasOne(User::class, 'id', 'uploaded_by');
     }
 
-    protected function getFileSizeAttribute()
+    protected function authorName() : Attribute
     {
+        $author = $this->user->name;
+        return new Attribute(
+            get: fn () => $author,
+        );
+    }
+
+    protected function fileUrl() : Attribute
+    {
+        $fileUrl = Storage::url('photos/'.$this->filename);
+        return new Attribute(
+            get: fn () => $fileUrl,
+        );
+    }
+
+    protected function fileSize() : Attribute
+    {
+        $fileSize = null;
         if (Storage::disk('public')->exists('photos/'.$this->filename)) {
-            return $this->formatSizeUnits(Storage::disk('public')->size('photos/'.$this->filename));
-            // return 'CHeck';
+            $fileSize = $this->formatSizeUnits(Storage::disk('public')->size('photos/'.$this->filename));
         }
-        return null;
+
+        return new Attribute(
+            get: fn () => $fileSize,
+        );
     }
 
     function formatSizeUnits($bytes)

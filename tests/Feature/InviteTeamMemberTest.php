@@ -13,7 +13,7 @@ use Tests\TestCase;
 
 class InviteTeamMemberTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_team_members_can_be_invited_to_team(): void
     {
@@ -23,7 +23,7 @@ class InviteTeamMemberTest extends TestCase
 
         Mail::fake();
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])
             ->set('addTeamMemberForm', [
@@ -44,7 +44,7 @@ class InviteTeamMemberTest extends TestCase
 
         Mail::fake();
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         // Add the team member...
         $component = Livewire::test(TeamMemberManager::class, ['team' => $user->currentTeam])

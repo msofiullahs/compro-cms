@@ -10,11 +10,11 @@ use Tests\TestCase;
 
 class ProfileInformationTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_current_profile_information_is_available(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $this->actingAs($user = User::find(1));
 
         $component = Livewire::test(UpdateProfileInformationForm::class);
 
@@ -24,7 +24,7 @@ class ProfileInformationTest extends TestCase
 
     public function test_profile_information_can_be_updated(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $this->actingAs($user = User::find(1));
 
         Livewire::test(UpdateProfileInformationForm::class)
             ->set('state', ['name' => 'Test Name', 'email' => 'test@example.com'])

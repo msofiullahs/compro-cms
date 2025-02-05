@@ -4,7 +4,7 @@
             <x-form wire:submit="update" enctype="multipart/form-data">
                 <x-input label="Title" wire:model="title" />
                 <x-input label="Slug" wire:model="slug" />
-                <x-editor wire:model="content" label="Content" :config="$config" hint="The full content description" />
+                <x-editor wire:model="content" label="Content" disk="public" :config="$config" hint="The full content description" />
                 <div class="grid grid-flow-col gap-4">
                     <x-file wire:model="banner" label="Banner" change-text="Change" wire:change="updateBanner" accept="image/png, image/jpeg, video/*" />
                     <x-radio label="Status" :options="$options" wire:model="status" class="w-full" />

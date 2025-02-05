@@ -29,7 +29,7 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-button>
+        <x-button type="submit">
             {{ __('Create') }}
         </x-button>
     </x-slot>

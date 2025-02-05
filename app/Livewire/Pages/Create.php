@@ -34,7 +34,11 @@ class Create extends Component
         $config = [
             // 'theme'=> 'silver',
             'skin'      => 'oxide-dark',
-            'plugins'   => 'autoresize',
+            'mode'      => 'classic',
+            'menubar'   => 'edit insert view format table tools help',
+            'toolbar'   => 'undo redo | styles | bold italic | link image table',
+            'min_height'=> 500,
+            'images_upload_url' => route('api.media.upload'),
         ];
         $options = [
             ['id' => 'draft', 'name' => 'Draft'],

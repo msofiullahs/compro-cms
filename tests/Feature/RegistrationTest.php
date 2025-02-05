@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_registration_screen_can_be_rendered(): void
     {
@@ -42,8 +42,8 @@ class RegistrationTest extends TestCase
         $response = $this->post('/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
+            'password' => 'mypassword',
+            'password_confirmation' => 'mypassword',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
         ]);
 

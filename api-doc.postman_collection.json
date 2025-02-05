@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "8bd6b67a-5f0d-44f1-94ff-e408e6ae5127",
+		"name": "compro-cms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4214562"
+	},
+	"item": [
+		{
+			"name": "Page - Index",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pages?search=test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pages"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "test",
+							"description": "page title"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page - Create New Page",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "My Page",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "",
+							"description": "optional",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "banner",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/pages/store",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pages",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page - Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/pages/show/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"pages",
+						"show",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page - Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "My Page",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "",
+							"description": "optional",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "banner",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "status",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/pages/update/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pages",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page - Show (Public)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/public/pages/test-alert-123-1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"public",
+						"pages",
+						"test-alert-123-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Page - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/pages/delete/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"pages",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Media - Index",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/media?fileType=image",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"media"
+					],
+					"query": [
+						{
+							"key": "fileType",
+							"value": "image"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Media - Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/media/upload",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"media",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Media - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/media/delete/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"media",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Index",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/teams?search=test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "test",
+							"description": "team's name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Invite by Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "team_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sofiullah.work@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/teams/invite",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"invite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Add User as Team Member",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "team_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sofiullah.work@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/teams/add",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Create New Team",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "My Team Name",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/teams/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Remove Member from Team",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "team_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/teams/remove",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Update Team Name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "My Team New Name",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/teams/update/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Team - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/teams/delete/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"teams",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "tENlWxWSqGQvkB9tzWmIan81tPnpSc0SlUrFQDru9d004770",
+			"type": "string"
+		}
+	]
+}

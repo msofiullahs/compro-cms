@@ -16,7 +16,11 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.1/cropper.min.css" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/tinymce.min.js'])
+        @vite([
+            'resources/css/app.css',
+            'resources/js/app.js',
+            'resources/js/tinymce.min.js',
+        ])
 
         <!-- Styles -->
         @livewireStyles
@@ -46,7 +50,7 @@
                 {{ $slot }}
             </x-slot:content>
 
-            <x-slot:footer class="absolute right-0 bottom-0 text-right px-16 py-5">&copy; 2025 - Sofiullah</x-slot:footer>
+            <x-slot:footer class="absolute right-0 bottom-0 text-right px-16 py-5">&copy; 2025 - Sofiullah | Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) - Jetstream x Livewire</x-slot:footer>
         </x-main>
 
         @stack('modals')

@@ -10,11 +10,11 @@ use Tests\TestCase;
 
 class UpdateTeamNameTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_team_names_can_be_updated(): void
     {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         Livewire::test(UpdateTeamNameForm::class, ['team' => $user->currentTeam])
             ->set(['state' => ['name' => 'Test Team']])

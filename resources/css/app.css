@@ -17,7 +17,7 @@ table tr td:last-child {
     width: 120px;
 }
 
-.w-full input {
+.w-full input[type="file"] {
     width: 100%;
 }
 

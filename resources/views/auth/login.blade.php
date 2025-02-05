@@ -22,7 +22,8 @@
 
             <div class="mt-4">
                 <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-password id="password" hint="It toggles visibility" name="password" clearable required />
+                {{-- <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" /> --}}
             </div>
 
             <div class="block mt-4">
@@ -39,7 +40,7 @@
                     </a>
                 @endif
 
-                <x-button class="ms-4">
+                <x-button class="ms-4" type="submit">
                     {{ __('Log in') }}
                 </x-button>
             </div>

@@ -24,10 +24,7 @@
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
-                            <label class="flex items-center">
-                                <x-checkbox wire:model="createApiTokenForm.permissions" :value="$permission"/>
-                                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ $permission }}</span>
-                            </label>
+                            <x-checkbox wire:model="createApiTokenForm.permissions" label="{{$permission}}" :value="$permission" />
                         @endforeach
                     </div>
                 </div>
@@ -39,7 +36,7 @@
                 {{ __('Created.') }}
             </x-action-message>
 
-            <x-button>
+            <x-button type="submit">
                 {{ __('Create') }}
             </x-button>
         </x-slot>
@@ -140,7 +137,7 @@
                 {{ __('Cancel') }}
             </x-secondary-button>
 
-            <x-button class="ms-3" wire:click="updateApiToken" wire:loading.attr="disabled">
+            <x-button class="ms-3" wire:click="updateApiToken" wire:loading.attr="disabled" type="submit">
                 {{ __('Save') }}
             </x-button>
         </x-slot>

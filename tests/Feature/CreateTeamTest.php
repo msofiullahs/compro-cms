@@ -10,11 +10,11 @@ use Tests\TestCase;
 
 class CreateTeamTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_teams_can_be_created(): void
     {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         Livewire::test(CreateTeamForm::class)
             ->set(['state' => ['name' => 'Test Team']])

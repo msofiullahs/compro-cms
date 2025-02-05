@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class PasswordResetTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_reset_password_link_screen_can_be_rendered(): void
     {
@@ -32,7 +32,7 @@ class PasswordResetTest extends TestCase
 
         Notification::fake();
 
-        $user = User::factory()->create();
+        $user = User::find(1);
 
         $this->post('/forgot-password', [
             'email' => $user->email,
@@ -49,7 +49,7 @@ class PasswordResetTest extends TestCase
 
         Notification::fake();
 
-        $user = User::factory()->create();
+        $user = User::find(1);
 
         $this->post('/forgot-password', [
             'email' => $user->email,
@@ -72,7 +72,7 @@ class PasswordResetTest extends TestCase
 
         Notification::fake();
 
-        $user = User::factory()->create();
+        $user = User::find(1);
 
         $this->post('/forgot-password', [
             'email' => $user->email,
@@ -82,8 +82,8 @@ class PasswordResetTest extends TestCase
             $response = $this->post('/reset-password', [
                 'token' => $notification->token,
                 'email' => $user->email,
-                'password' => 'password',
-                'password_confirmation' => 'password',
+                'password' => 'mypassword',
+                'password_confirmation' => 'mypassword',
             ]);
 
             $response->assertSessionHasNoErrors();

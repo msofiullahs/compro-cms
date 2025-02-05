@@ -12,7 +12,7 @@ use Tests\TestCase;
 
 class EmailVerificationTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_email_verification_screen_can_be_rendered(): void
     {
@@ -20,7 +20,7 @@ class EmailVerificationTest extends TestCase
             $this->markTestSkipped('Email verification not enabled.');
         }
 
-        $user = User::factory()->withPersonalTeam()->unverified()->create();
+        $user = User::find(1);
 
         $response = $this->actingAs($user)->get('/email/verify');
 
@@ -35,7 +35,7 @@ class EmailVerificationTest extends TestCase
 
         Event::fake();
 
-        $user = User::factory()->unverified()->create();
+        $user = User::find(1);
 
         $verificationUrl = URL::temporarySignedRoute(
             'verification.verify',
@@ -57,7 +57,7 @@ class EmailVerificationTest extends TestCase
             $this->markTestSkipped('Email verification not enabled.');
         }
 
-        $user = User::factory()->unverified()->create();
+        $user = User::find(1);
 
         $verificationUrl = URL::temporarySignedRoute(
             'verification.verify',

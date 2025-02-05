@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class CreateApiTokenTest extends TestCase
 {
-    use RefreshDatabase;
+
 
     public function test_api_tokens_can_be_created(): void
     {
@@ -19,7 +19,7 @@ class CreateApiTokenTest extends TestCase
             $this->markTestSkipped('API support is not enabled.');
         }
 
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::find(1));
 
         Livewire::test(ApiTokenManager::class)
             ->set(['createApiTokenForm' => [
