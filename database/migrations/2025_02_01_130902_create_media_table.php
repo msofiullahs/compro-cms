@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->string('filename');
-            $table->string('ext');
+            $table->string('filetype')->nullable();
             $table->bigInteger('uploaded_by');
             $table->timestamps();
             $table->softDeletes();

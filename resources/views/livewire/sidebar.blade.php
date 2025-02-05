@@ -25,15 +25,15 @@
 
             <x-menu-separator />
 
-            <x-menu-item title="Dasboard" icon="o-sparkles" link="{{ route('dashboard') }}" route="dashboard" />
-            <x-menu-item title="Page" icon="o-document" link="bb" />
-            <x-menu-item title="Media" icon="s-radio" link="bb" />
+            <x-menu-item title="Dasboard" icon="o-sparkles" link="{{ route('dashboard') }}" />
+            <x-menu-item title="Page" icon="o-document" link="{{ route('page.index') }}" route="page.*" />
+            <x-menu-item title="Media" icon="s-radio" link="{{ route('media.index') }}" route="media.*" />
 
             @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                 <x-menu-sub title="{{ Auth::user()->currentTeam->name }}" icon="o-user-group">
-                    <x-menu-item title="Team Settings" icon="s-cog" link="{{ route('teams.show', Auth::user()->currentTeam->id) }}" route="teams.show" />
+                    <x-menu-item title="Team Settings" icon="s-cog" link="{{ route('teams.show', Auth::user()->currentTeam->id) }}" />
                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                        <x-menu-item title="Create New Team" icon="o-rectangle-group" link="{{ route('teams.create') }}" route="teams.create" />
+                        <x-menu-item title="Create New Team" icon="o-rectangle-group" link="{{ route('teams.create') }}" />
                     @endcan
                     @if (Auth::user()->allTeams()->count() > 1)
                         <x-menu-separator />
@@ -46,9 +46,9 @@
             @endif
 
             <x-menu-sub title="Manage Account" icon="o-adjustments-horizontal">
-                <x-menu-item title="Profile" icon="o-user-circle" link="{{ route('profile.show') }}" route="profile.show" />
+                <x-menu-item title="Profile" icon="o-user-circle" link="{{ route('profile.show') }}" />
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-menu-item title="API Tokens" icon="m-arrow-path-rounded-square" link="{{ route('api-tokens.index') }}" route="api-tokens.index" />
+                    <x-menu-item title="API Tokens" icon="m-arrow-path-rounded-square" link="{{ route('api-tokens.index') }}"  />
                 @endif
             </x-menu-sub>
         </x-menu>
