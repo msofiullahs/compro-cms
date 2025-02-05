@@ -1,5 +1,5 @@
 <h1 align="center">Headless CMS - Compro</h1>
-<img src="https://laravel.com/img/logomark.min.svg">
+<img src="https://laravel.com/img/logomark.min.svg"> <img src="https://laravel.com/img/logotype.min.svg">
 <img src="https://jetstream.laravel.com/logo-dark.svg">
 <img src="https://drive.google.com/uc?export=view&id=1e4YAIgBhrXPjcX4mxzMlsYIKqkVfIPLv" />
 ## Installation
