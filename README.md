@@ -38,4 +38,5 @@ To get access token, login to dashboard first and go to Manage Account > API Tok
 
 ### Dashboard Login Information (Seeder)
 > Email: test@mail.com
+>
 > Password: mypassword
