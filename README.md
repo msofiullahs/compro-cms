@@ -35,3 +35,7 @@
 ## API
 For clear documentation, you can import `api-doc.postman_collection.json` into your Postman.
 To get access token, login to dashboard first and go to Manage Account > API Token.
+
+### Dashboard Login Information (Seeder)
+> Email: test@mail.com
+> Password: mypassword
