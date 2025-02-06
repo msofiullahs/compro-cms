@@ -45,7 +45,7 @@ class Edit extends Component
         if (!empty($page->banner)) {
             $media = Media::find($page->banner);
             $fileName = $media->filename;
-            $fileUrl = Storage::url('photos/'.$media->filename);
+            $fileUrl = Storage::disk('public')->url('photos/'.$media->filename);
             $fileType = Str::contains($media->filetype, 'video') ? 'video' : 'image';
         }
         $this->pageID = $page->id;
@@ -84,12 +84,12 @@ class Edit extends Component
         $this->fileName = false;
     }
 
-    public function update($id)
+    public function update()
     {
         $this->validate();
 
         $user = Auth::user();
-        $page = Page::find($id);
+        $page = Page::find($this->pageID);
         try {
             if (!empty($this->banner)) {
                 $this->banner->storePubliclyAs(path: 'photos', name: $this->banner->hashName());
