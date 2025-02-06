@@ -24,7 +24,6 @@
 - `composer install`
 - `npm install`
 - `php artisan migrate --seed`
-- `php artisan db:seed`
 
 ### Development
 - First terminal >> `php artisan serve`
