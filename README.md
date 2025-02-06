@@ -1,9 +1,19 @@
 <h1 align="center">Headless CMS - Compro</h1>
-<div align="left" valign="center">
-<img src="https://laravel.com/img/logomark.min.svg" display="inline" style="margin-right 5px" /> <img src="https://laravel.com/img/logotype.min.svg" display="inline" />
-</div>
-<img src="https://jetstream.laravel.com/logo-dark.svg">
-<img src="https://drive.google.com/uc?export=view&id=1e4YAIgBhrXPjcX4mxzMlsYIKqkVfIPLv" width="250" />
+<table>
+    <tr>
+        <td valign="center">
+            <div align="left">
+                <img src="https://laravel.com/img/logomark.min.svg" display="inline" style="margin-right 5px" /> <img src="https://laravel.com/img/logotype.min.svg" display="inline" />
+            </div>
+        </td>
+        <td valign="center">
+            <img src="https://jetstream.laravel.com/logo-dark.svg">
+        </td>
+        <td valign="center">
+            <img src="https://drive.google.com/uc?export=view&id=1e4YAIgBhrXPjcX4mxzMlsYIKqkVfIPLv" width="250" />
+        </td>
+    </tr>
+</table>
 ## Installation
 - Clone this project
 - `cd /path-to-this-project`
