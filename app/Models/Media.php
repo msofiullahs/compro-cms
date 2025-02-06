@@ -32,7 +32,7 @@ class Media extends Model
 
     protected function fileUrl() : Attribute
     {
-        $fileUrl = Storage::url('photos/'.$this->filename);
+        $fileUrl = Storage::disk('public')->url('photos/'.$this->filename);
         return new Attribute(
             get: fn () => $fileUrl,
         );

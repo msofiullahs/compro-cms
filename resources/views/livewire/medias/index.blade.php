@@ -11,7 +11,7 @@
             </x-header>
             @foreach ($medias as $media)
                 {{-- <x-list-item :item="$media" value="filename" sub-value="filetype" avatar="file_url ? file_url : " /> --}}
-                <x-list-item :item="$media" no-separator no-hover>
+                <x-list-item :item="$media">
                     <x-slot:avatar>
                         @if (str_contains($media->filetype, 'image'))
                             <x-avatar :image="$media->file_url" class="!w-14 !rounded-lg" />
@@ -22,7 +22,7 @@
                         @endif
                     </x-slot:avatar>
                     <x-slot:value>
-                        {{$media->filename}}
+                        <a href="{{$media->file_url}}" target="_blank">{{$media->filename}}</a>
                     </x-slot:value>
                     @if (!empty($media->filetype) && !empty($media->file_size))
                         <x-slot:sub-value>
@@ -30,6 +30,9 @@
                         </x-slot:sub-value>
                     @endif
                     <x-slot:actions>
+                        <a href="{{$media->file_url}}" target="_blank">
+                            <x-icon name="o-eye" class="w-9 h-9 text-green-500" />
+                        </a>
                         <x-button icon="o-trash" class="text-red-500" wire:click="delete({{ $media->id }})" spinner />
                     </x-slot:actions>
                 </x-list-item>

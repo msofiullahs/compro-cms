@@ -35,7 +35,7 @@ class Page extends Model
         if (!empty($this->banner)) {
             $banner = Media::find($this->banner);
             if (Storage::disk('public')->exists('photos/'.$banner->filename)) {
-                $bannerUrl = Storage::url('photos/'.$banner->filename);
+                $bannerUrl = Storage::disk('public')->url('photos/'.$banner->filename);
             }
         }
         return new Attribute(
