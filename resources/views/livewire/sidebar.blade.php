@@ -19,7 +19,11 @@
                     </x-slot:avatar>
                 @endif
                 <x-slot:actions>
-                    <x-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="Logout" no-wire-navigate link="{{ route('logout') }}" click.prevent="$root.submit();" />
+                    <form method="POST" action="{{ route('logout') }}" x-data>
+                        @csrf
+
+                        <x-button icon="o-power" class="btn-circle btn-ghost btn-xs" tooltip-left="Logout" type="submit" />
+                    </form>
                 </x-slot:actions>
             </x-list-item>
 
