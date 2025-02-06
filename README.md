@@ -14,6 +14,7 @@
         </td>
     </tr>
 </table>
+
 ## Installation
 - Clone this project
 - `cd /path-to-this-project`
